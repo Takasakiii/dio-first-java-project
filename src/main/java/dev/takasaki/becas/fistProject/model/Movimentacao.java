@@ -2,6 +2,7 @@ package dev.takasaki.becas.fistProject.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
@@ -12,14 +13,15 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
-@Builder
+@NoArgsConstructor
 @Entity
 public class Movimentacao {
     @Embeddable
     @Data
+    @NoArgsConstructor
     public class MovimentacaoId implements Serializable {
-        private final Long idMovimento;
-        private final Long idUsuario;
+        private Long idMovimento;
+        private Long idUsuario;
     }
 
     @EmbeddedId

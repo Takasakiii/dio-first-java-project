@@ -2,18 +2,19 @@ package dev.takasaki.becas.fistProject.model;
 
 import lombok.Data;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Data
-@Builder
+@NoArgsConstructor
 @Entity
 public class Empresa {
     @Id
-    private final Long id;
+    private Long id;
     private String descricao;
-    private final String cnpj;
+    private String cnpj;
     private String endereco;
     private String bairro;
     private String cidade;

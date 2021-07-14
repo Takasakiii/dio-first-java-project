@@ -2,6 +2,7 @@ package dev.takasaki.becas.fistProject.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
@@ -12,15 +13,16 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
-@Builder
+@NoArgsConstructor
 @Entity
 public class BancoHoras {
     @Embeddable
     @Data
+    @NoArgsConstructor
     public class BancoHorasId implements Serializable {
-        private final Long idBancoHoras;
-        private final Long idMovimentacao;
-        private final Long idUsuario;
+        private Long idBancoHoras;
+        private Long idMovimentacao;
+        private Long idUsuario;
     }
 
     @EmbeddedId
