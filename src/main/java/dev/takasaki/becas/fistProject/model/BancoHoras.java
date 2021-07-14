@@ -14,27 +14,21 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Entity
-public class Movimentacao {
+public class BancoHoras {
     @Embeddable
     @Data
-    public class MovimentacaoId implements Serializable {
-        private final Long idMovimento;
+    public class BancoHorasId implements Serializable {
+        private final Long idBancoHoras;
+        private final Long idMovimentacao;
         private final Long idUsuario;
     }
 
     @EmbeddedId
-    private MovimentacaoId id;
+    private BancoHorasId id;
 
     @ManyToOne
-    private Empresa empresa;
-
-    private LocalDate entrada;
-    private LocalDate saida;
-    private BigDecimal periodoPermanencia;
-
-    @ManyToOne
-    private Ocorrencia ocorrencia;
-
-    @ManyToOne
-    Calendario dataEspecial;
+    private CategoriaUsuario categoria;
+    private LocalDate dataTrabalhada;
+    private BigDecimal quantidadeHorasTrabalhadas;
+    private BigDecimal saldoHorasTrabalhadas;
 }
